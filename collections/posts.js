@@ -36,7 +36,7 @@ Meteor.methods({
             commentsCount: 0
         });
 
-        if (! this.isSimulation) {
+        if (!this.isSimulation) {
             var Future = Npm.require('fibers/future');
             var future = new Future();
             Meteor.setTimeout(function() {
