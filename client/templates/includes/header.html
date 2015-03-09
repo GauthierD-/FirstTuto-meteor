@@ -1,27 +1,33 @@
 <template name="header">
-    <header class="navbar">
-        <div class="navbar-inner">
-            <a class="btn btn-navbar" data-toggle="collapse" data-targer=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="{{pathFor 'postsList'}}">Miscroscope</a>
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    {{#if currentUser}}
-                        <li>
-                            <a href="{{pathFor 'postSubmit'}}">New</a>
-                        </li>
-                        <li>
-                            {{> notifications}}
-                        </li>
-                    {{/if}}
-                </ul>
-                <ul class="nav pull-right">
-                    <li>{{> loginButtons}}</li>
-                </ul> 
-            </div>
-        </div> 
-    </header>
+<header class="navbar">
+<div class="navbar-inner">
+  <a class="btn btn-navbar" data-toggle="collapse" data-targer=".nav-collapse">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </a>
+  <a class="brand" href="{{pathFor 'home'}}">Miscroscope</a>
+  <div class="nav-collapse collapse">
+    <ul class="nav">
+      <li class="{{activeRouteClass 'home' 'newPosts'}}">
+        <a href="{{pathFor 'newPosts'}}">New</a>
+      </li>
+      <li class="{{activeRouteClass 'bestPosts'}}">
+        <a href="{{pathFor 'bestPosts'}}">Best</a>
+      </li>
+      {{#if currentUser}}
+        <li class="{{activeRouteClass 'postSubmit'}}">
+          <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
+        </li>
+        <li class="dropdown">
+          {{> notifications}}
+        </li>
+      {{/if}}
+    </ul>
+    <ul class="nav pull-right">
+      <li>{{> loginButtons}}</li>
+    </ul> 
+  </div>
+</div> 
+</header>
 </template>
