@@ -1,7 +1,7 @@
-# machine:
-#    node:
-#     version: v0.12.0 
-
 dependencies:
   override:
     - npm install jshint
+
+test:
+  override:
+    - jshint client/templates/comments
