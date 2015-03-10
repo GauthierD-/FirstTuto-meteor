@@ -1,6 +1,6 @@
 'use strict';
 /*jshint -W020 */
-Comments = new Meteor.Collection('comments');
+var Comments = new Meteor.Collection('comments');
 
 Meteor.methods({
     comment: function (commentAttributes) {
