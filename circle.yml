@@ -1,7 +1,13 @@
 dependencies:
   override:
-    - npm install jshint
+    - npm install jshint@v2.6.3
 
 test:
   override:
-    - jshint client/templates/comments
+    - jshint client/templates/comments/comment.js
+
+machine:
+  pre:
+    - curl https://raw.githubusercontent.com/creationix/nvm/v0.23.3/install.sh | bash
+  node:
+    version: 0.12.0
